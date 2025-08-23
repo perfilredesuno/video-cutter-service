@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: video-processor
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: CLOUDINARY_CLOUD_NAME
+        fromEnvVar: CLOUDINARY_CLOUD_NAME
+      - key: CLOUDINARY_API_KEY
+        fromEnvVar: CLOUDINARY_API_KEY
+      - key: CLOUDINARY_API_SECRET
+        fromEnvVar: CLOUDINARY_API_SECRET
